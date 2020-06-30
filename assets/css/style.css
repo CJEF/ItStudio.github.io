@@ -157,7 +157,6 @@ img {
 }
 
 
-
 /* services
 ================================== */
 
@@ -646,6 +645,59 @@ img {
 	.features-button {margin: 0 auto;}
 	.video-btn a {padding: 18px;font-size: 13px;}
 	.projects__porfolio-flex {width: 300px;margin: 0 auto;}
+	
+/* burger
+================================== */
+.header {
+	opacity: 1;
+}
+.overflow {
+	overflow-y: hidden;
+}
+.nav {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	background-color: #35a7e9;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-flow: column;
+	z-index: 100;
+	text-align: center;
+	justify-content: center;
+	transition: all .2s linear;
+}
+.hamburger {
+	width: 30px;
+	height: 20px;
+	position: relative;
+	display: block;
+	top: 0;
+	cursor: pointer;
+	z-index: 100;
+}
+.hamburger span, .hamburger:before, .hamburger:after {
+	position: absolute;
+	width: 30px;
+	height: 3px;
+	background-color: #000;
+	top: 9px;
+	left: 0;
+	content: '';
+}
+.hamburger:before {
+	top: 0;
+}
+.hamburger:after {
+	top: 18px;
+}
+.nav.active {
+	left: 0;
+}
+
+/* burger
+================================== */
 }
 @media (max-width: 576px) {
 	.title {font-size: 21px;}

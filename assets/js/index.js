@@ -1,19 +1,15 @@
-/* мобильное меню >>>>>>>>>>>>>>>>>>>>>>*/
-let burger = document.querySelector("#burger");
-let navigation = document.querySelector(".navigation");
+let burger = document.getElementById("burger");
+let nav = document.getElementById("nav");
+let navLink = document.getElementsByClassName("nav_link");
+let body = document.body;
+burger.onclick = function() {
+    nav.classList.toggle("active");
+    body.classList.toggle("overflow");
+  };
 
-let contactBtn = document.querySelector(".hire--btn");
-burger.addEventListener('click', function () {
-    body.classList.toggle('overflow')
-    navigation.classList.toggle('active');
-    burger.classList.toggle('hamburger_active');
-})
-
-contactBtn.addEventListener('click', function () {
-    navigation.classList.toggle('active');
-    burger.classList.toggle('hamburger_active');
-    //body.classList.toggle('overflow')
-    if (body.classList.contains('overflow'))
-        body.classList.remove('overflow')
-})
-/* мобильное меню />>>>>>>>>>>>>>>>>>>>> */
+for (let i = 0; i < navLink.length; i++) {
+  navLink[i].onclick = function() {
+    body.classList.remove("overflow")
+    nav.classList.remove("active");
+  }
+}
